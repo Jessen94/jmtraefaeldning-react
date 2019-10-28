@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+import './index.css';
 
 class App extends Component {
  state = {
@@ -26,12 +27,16 @@ class App extends Component {
         },
       ]
  };
+
+
  render(){
- console.log(this.state.nav)
   return (
     <div className="App">
-      <Nav />
-
+      <nav>
+      <div className='ul'>
+      <Nav nav={this.state.nav}/>
+      </div>
+      </nav>
     </div>
   );
  }
