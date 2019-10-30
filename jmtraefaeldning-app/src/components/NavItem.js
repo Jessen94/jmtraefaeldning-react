@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 
 export class NavItem extends Component {
     render() {
+        const { id, title} = this.props.nav;
         return (
             <div>
-                <p>{this.props.nav.title}</p>
+                <span onClick={this.props.CurrentPage.bind(this,id)}>
+                <p>{title}
+                </p>
+                </span>
             </div>
         )
     }

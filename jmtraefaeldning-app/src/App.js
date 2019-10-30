@@ -11,17 +11,17 @@ class App extends Component {
           Marked: false
         },
         {
-          id: 1,
+          id: 2,
           title: 'Privat',
           Marked: false
         },
         {
-          id: 1,
+          id: 3,
           title: 'Erhverv',
           Marked: false
         },
         {
-          id: 1,
+          id: 4,
           title: 'Kontakt',
           Marked: false
         },
@@ -29,12 +29,27 @@ class App extends Component {
  };
 
 
+ setCurrentPage = (id) => {
+   this.setState({
+     nav: this.state.nav.map(Nav => {
+       if(Nav.id === id){
+       }
+       else{
+         
+       }
+       return Nav;
+     })
+
+
+   })
+ };
+
  render(){
   return (
     <div className="App">
       <nav>
       <div className='ul'>
-      <Nav nav={this.state.nav}/>
+      <Nav nav={this.state.nav} CurrentPage={this.setCurrentPage}/>
       </div>
       </nav>
     </div>

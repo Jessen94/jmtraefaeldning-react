@@ -8,7 +8,7 @@ class Nav extends Component {
 
     return this.props.nav.map((nav) => (
         <div className='li'>
-            <NavItem key={nav.id} nav={nav}/>
+            <NavItem key={nav.id} nav={nav} CurrentPage={this.props.CurrentPage}/>
         </div>
     ));
   }
