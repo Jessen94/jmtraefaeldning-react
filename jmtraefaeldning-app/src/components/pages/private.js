@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function private() {
+function Private() {
     return (
         <div>
             
@@ -9,4 +9,4 @@ function private() {
     )
 }
 
-export default private;
+export default Private;

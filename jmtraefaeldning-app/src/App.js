@@ -13,6 +13,7 @@ class App extends Component {
  
  render(){
   return (
+    <Router>
     <div className="App">
      <div className="container">
         <Header />
@@ -32,7 +33,7 @@ class App extends Component {
             <Business />
           </React.Fragment>
         )} />
-        <Route path="/kontakt" render={props => (
+        <Router path="/kontakt" render={props => (
           <React.Fragment>
             <About />
           </React.Fragment>
@@ -40,6 +41,7 @@ class App extends Component {
       <Footer />
      </div>
     </div>
+    </Router>
   );
  }
 }
