@@ -1,57 +1,44 @@
 import React, {Component} from 'react';
-import Nav from './components/Nav';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
+import Home from './components/pages/home';
+import Private from './components/pages/private';
+import Business from './components/pages/business';
+import About from './components/pages/about';
+import Carousel from './components/layout/carousel';
 import './index.css';
 
 class App extends Component {
- state = {
-      nav: [
-        {
-          id: 1,
-          title: 'Hjem',
-          Marked: false
-        },
-        {
-          id: 2,
-          title: 'Privat',
-          Marked: false
-        },
-        {
-          id: 3,
-          title: 'Erhverv',
-          Marked: false
-        },
-        {
-          id: 4,
-          title: 'Kontakt',
-          Marked: false
-        },
-      ]
- };
-
-
- setCurrentPage = (id) => {
-   this.setState({
-     nav: this.state.nav.map(Nav => {
-       if(Nav.id === id){
-       }
-       else{
-         
-       }
-       return Nav;
-     })
-
-
-   })
- };
-
+ 
  render(){
   return (
     <div className="App">
-      <nav>
-      <div className='ul'>
-      <Nav nav={this.state.nav} CurrentPage={this.setCurrentPage}/>
-      </div>
-      </nav>
+     <div className="container">
+        <Header />
+        <Carousel/>
+        <Route exact path="/" render={props => (
+          <React.Fragment>
+            <Home />
+          </React.Fragment>
+        )} />
+        <Route path="/privat" render={props => (
+          <React.Fragment>
+            <Private />
+          </React.Fragment>
+        )} />
+        <Route path="/erhverv" render={props => (
+          <React.Fragment>
+            <Business />
+          </React.Fragment>
+        )} />
+        <Route path="/kontakt" render={props => (
+          <React.Fragment>
+            <About />
+          </React.Fragment>
+        )} />
+      <Footer />
+     </div>
     </div>
   );
  }
