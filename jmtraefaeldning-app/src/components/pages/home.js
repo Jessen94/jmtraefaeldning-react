@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import img from "./img7.jpg";
 
 
 function home() {
@@ -8,7 +9,7 @@ function home() {
                     <p className="intro" id="introtext">
                     Mit navn er Jens Moesgaard og jeg er ejer af JMTræfældning.
                     </p>
-                    <img className="intro" src="\Images\img7.jpg" alt="Jens posere med motorsav"/>
+                    <img className="intro" src={img} alt="Jens posere med motorsav"/>
             </div>
         </div>
     )
