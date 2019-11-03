@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
-export default class header extends Component {
+class header extends Component {
     render() {
         return (
-            <div class="header">
+            <div className="header">
                 <nav>
                     <ul>
-                        <li id="Home"><p>Hjem</p></li>
-                        <li id="Business"><p>Erhverv</p></li>
-                        <li id="Private"><p>Privat</p></li>
-                        <li id="Contact"><p>Kontakt</p></li>
+                        <li id="Home"><Link to="/" style={linkstyle}>Hjem</Link></li>
+                        <li id="Business"><Link to="/erhverv" style={linkstyle}>Erhverv</Link></li>
+                        <li id="Private"><Link to="/privat" style={linkstyle}>Privat</Link></li>
+                        <li id="Contact"><Link to="/kontakt" style={linkstyle}>Kontakt</Link></li>
                     </ul>
                 </nav>
             </div>
         )
     }
 }
+
+
+const linkstyle = {
+    textDecoration: 'none',
+    color: '#000000'
+};
+
+export default header;

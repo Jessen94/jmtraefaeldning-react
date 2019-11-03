@@ -7,7 +7,11 @@ import Private from './components/pages/private';
 import Business from './components/pages/business';
 import About from './components/pages/about';
 import Carousel from './components/layout/carousel';
+import './reset.css';
 import './index.css';
+import './footer.css';
+import './slideshow.css';
+
 
 class App extends Component {
  

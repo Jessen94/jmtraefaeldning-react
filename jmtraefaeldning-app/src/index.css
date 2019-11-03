@@ -36,7 +36,7 @@ nav li {
   flex-direction: row;
   justify-content: flex-end;
   margin-left: 10%;
-  padding: 5%;
+  padding: 3%;
   width: 33%;
   position: relative;
 }
@@ -56,6 +56,7 @@ nav p {
 .intro--container{
   display: flex;
   margin-top: 10%;
+  margin-bottom: 10%;
   margin-left: 20%;
   margin-right: 20%;
   padding: 3%;
@@ -77,4 +78,8 @@ img{
 .main--container{
   width: 100%;
   height: max-content;
+}
+
+.link{
+  text-decoration: none;
 }

@@ -18,21 +18,21 @@
 }
 
 .main-banner #imgban3{
-  background-image: url(../Images/img_1_2.jpg);
+  background-image: url(./Images/img_1_2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .main-banner #imgban2{
-  background-image: url(../Images/img_6_1.jpg);
+  background-image: url(./Images/img_6_1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .main-banner #imgban1{
-  background-image: url(../Images/img_4_2.JPG);
+  background-image: url(./Images/img_4_2.JPG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
