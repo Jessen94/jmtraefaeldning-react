@@ -1,5 +1,5 @@
 body {
-  background: rgb(212, 212, 212);
+  background: rgb(245, 245, 245);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
 }
@@ -60,7 +60,7 @@ nav p {
   margin-left: 20%;
   margin-right: 20%;
   padding: 3%;
-  background-color: rgb(180, 180, 180);;
+  background-color: rgb(212, 212, 212);
 }
 .intro{
   flex-direction: row;
