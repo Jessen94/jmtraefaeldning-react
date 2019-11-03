@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/JMtraefaeldning-react/static/css/main.29ab1373.chunk.css",
+    "main.js": "/JMtraefaeldning-react/static/js/main.081cd731.chunk.js",
+    "main.js.map": "/JMtraefaeldning-react/static/js/main.081cd731.chunk.js.map",
+    "runtime-main.js": "/JMtraefaeldning-react/static/js/runtime-main.9f9caee1.js",
+    "runtime-main.js.map": "/JMtraefaeldning-react/static/js/runtime-main.9f9caee1.js.map",
+    "static/js/2.d12b61b8.chunk.js": "/JMtraefaeldning-react/static/js/2.d12b61b8.chunk.js",
+    "static/js/2.d12b61b8.chunk.js.map": "/JMtraefaeldning-react/static/js/2.d12b61b8.chunk.js.map",
+    "index.html": "/JMtraefaeldning-react/index.html",
+    "precache-manifest.387180d4eb515b30455e040b75d75dec.js": "/JMtraefaeldning-react/precache-manifest.387180d4eb515b30455e040b75d75dec.js",
+    "service-worker.js": "/JMtraefaeldning-react/service-worker.js",
+    "static/css/main.29ab1373.chunk.css.map": "/JMtraefaeldning-react/static/css/main.29ab1373.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f9caee1.js",
+    "static/js/2.d12b61b8.chunk.js",
+    "static/css/main.29ab1373.chunk.css",
+    "static/js/main.081cd731.chunk.js"
+  ]
+}
