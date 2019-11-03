@@ -1,21 +1,18 @@
 {
   "files": {
-    "main.css": "/JMtraefaeldning-react/static/css/main.29ab1373.chunk.css",
-    "main.js": "/JMtraefaeldning-react/static/js/main.081cd731.chunk.js",
-    "main.js.map": "/JMtraefaeldning-react/static/js/main.081cd731.chunk.js.map",
+    "main.js": "/JMtraefaeldning-react/static/js/main.90e0edf3.chunk.js",
+    "main.js.map": "/JMtraefaeldning-react/static/js/main.90e0edf3.chunk.js.map",
     "runtime-main.js": "/JMtraefaeldning-react/static/js/runtime-main.9f9caee1.js",
     "runtime-main.js.map": "/JMtraefaeldning-react/static/js/runtime-main.9f9caee1.js.map",
     "static/js/2.d12b61b8.chunk.js": "/JMtraefaeldning-react/static/js/2.d12b61b8.chunk.js",
     "static/js/2.d12b61b8.chunk.js.map": "/JMtraefaeldning-react/static/js/2.d12b61b8.chunk.js.map",
     "index.html": "/JMtraefaeldning-react/index.html",
-    "precache-manifest.9af3363a86a51258e8c7c46f71aafae8.js": "/JMtraefaeldning-react/precache-manifest.9af3363a86a51258e8c7c46f71aafae8.js",
-    "service-worker.js": "/JMtraefaeldning-react/service-worker.js",
-    "static/css/main.29ab1373.chunk.css.map": "/JMtraefaeldning-react/static/css/main.29ab1373.chunk.css.map"
+    "precache-manifest.fe069fcaf0394bb8f139cae61b1cf31e.js": "/JMtraefaeldning-react/precache-manifest.fe069fcaf0394bb8f139cae61b1cf31e.js",
+    "service-worker.js": "/JMtraefaeldning-react/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.9f9caee1.js",
     "static/js/2.d12b61b8.chunk.js",
-    "static/css/main.29ab1373.chunk.css",
-    "static/js/main.081cd731.chunk.js"
+    "static/js/main.90e0edf3.chunk.js"
   ]
 }
