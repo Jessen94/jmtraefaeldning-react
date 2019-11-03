@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15d6a66c9565149462297c66e8b77858",
+    "revision": "74ae307a396c09871b0a1e0976118461",
     "url": "/JMtraefaeldning-react/index.html"
   },
   {
