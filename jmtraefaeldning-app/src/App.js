@@ -16,26 +16,18 @@ class App extends Component {
     <div className="App">
      <div className="container">
         <Header />
-        <Carousel/>
+        <Carousel />
         <Route exact path="/" render={props => (
-          <React.Fragment>
             <Home />
-          </React.Fragment>
         )} />
-        <Route path="/privat" render={props => (
-          <React.Fragment>
-            <Private />
-          </React.Fragment>
+        <Route path="/privat" Component={Private} render={props => (
+            <Private />      
         )} />
-        <Route path="/erhverv" render={props => (
-          <React.Fragment>
+        <Route path="/erhverv" render={props => (   
             <Business />
-          </React.Fragment>
         )} />
-        <Router path="/kontakt" render={props => (
-          <React.Fragment>
+        <Route path="/kontakt"  render={props => (
             <About />
-          </React.Fragment>
         )} />
       <Footer />
      </div>

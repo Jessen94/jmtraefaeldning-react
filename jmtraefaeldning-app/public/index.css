@@ -16,6 +16,11 @@ body {
   display: flex;
 }
 
+.sticky {
+  position: fixed;
+  width: 100%
+}
+
 .header::after {
   content: '';
   clear: both;
@@ -70,10 +75,26 @@ nav p {
   padding-top: 10%;
 }
 
-img{
+.img--intro{
   transform: scale(0.8, 0.8);
   -ms-transform: scale(0.8, 0.8);
   -webkit-transform: scale(0.8, 0.8);
+}
+
+.img--banner{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about--container{
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 3%;
+  background-color: rgb(180, 180, 180);;
 }
 .main--container{
   width: 100%;

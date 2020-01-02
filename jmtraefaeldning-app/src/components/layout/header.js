@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class header extends Component {
     render() {
         return (
-            <div className="header">
+            <div className="header sticky">
                 <nav>
                     <ul>
                         <li id="Home"><Link to="/" style={linkstyle}>Hjem</Link></li>
