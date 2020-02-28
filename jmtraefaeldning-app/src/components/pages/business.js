@@ -13,7 +13,15 @@ function business() {
                     <div className="intro--text">
                         <h1>Professionelt og effektivt</h1>
                         <p>
-                        Udover træfældning og -beskæring til privat så tilbyder jeg også skovpleje til virksomheder.
+                        Udover træfældning og -beskæring til private så tilbyder jeg også skovpleje til virksomheder. Dette inkludere:<br/><br/>
+                        <ol>
+                            <li>Fældning af træer i alle størrelser</li>
+                            <li>Udtyndning</li>
+                            <li>Udrensning</li>
+                            <li>Pakning af juletræer inkl. kørsel</li>
+                        </ol>
+                        <br/>
+                        Ring for at få et tilbud
                         </p>
                     </div>
                     <img className="img--intro" src={img} alt="Jens posere med motorsav" />
