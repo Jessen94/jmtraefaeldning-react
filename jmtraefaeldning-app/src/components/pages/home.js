@@ -5,7 +5,6 @@ import img from "../img/Figma_hej.jpg";
 function home() {
     return (
         <div>
-
             <div className="intro--container">
                 <div className="home-headline">
                     <h1>Professionel træfældning på Sjælland</h1>
