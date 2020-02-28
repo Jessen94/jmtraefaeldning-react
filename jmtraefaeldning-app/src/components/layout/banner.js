@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import img from "../img/img_19_1.jpg";
+import img from "../img/Figma_banner.jpg";
 
 export default class carousel extends Component {
     render() {
