@@ -1,10 +1,11 @@
-body {
-  background: rgb(245, 245, 245);
-	font-family: 'Work Sans', sans-serif;
-	font-weight: 800;
-}
 #root{
   width: 100%;
+}
+body {
+  background: #FFFFFF;
+	font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+
 }
 
 .App {
@@ -14,6 +15,13 @@ body {
 
 .header {
   display: flex;
+  background-color: antiquewhite;
+  opacity: 60%;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%
 }
 
 .header::after {
@@ -27,8 +35,6 @@ nav {
 
 nav > ul {
   display: flex;
-  margin: 0;
-  padding: 0;
   width: 60%;
 }
 
@@ -36,45 +42,88 @@ nav li {
   flex-direction: row;
   justify-content: flex-end;
   margin-left: 10%;
-  padding: 3%;
-  width: 33%;
+  padding-top: 3%;
   position: relative;
 }
 
-nav p {
+.header-logo{
+  background-color: black;
+  opacity: 200%;
+  width: fit-content;
+  padding: 2%;
+}
+
+
+nav a {
   color: rgb(42, 42, 42);
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 22px;
   text-align: center;
+  opacity: 200%;
 }
 
 .infosection{
   width: 100%;
   height: 100%;
 }
-.intro--container{
+
+.home-headline{
+  margin: 5% 30% 0% 30%;
+  font-size: 40px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.intro{
   display: flex;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 10%;
   margin-left: 20%;
   margin-right: 20%;
   padding: 3%;
-  background-color: rgb(241, 241, 241);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 20px 2px;
+ 
 }
-.intro{
-  flex-direction: row;
+.intro--container h1 {
+  width: fit-content;
+  font-size: 40px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  padding-top: 10%;
+  line-height: 1.5em;
 }
 
 .intro--container p {
   padding-top: 10%;
+  line-height: 1.5em;
 }
 
-img{
+
+.img--intro{
+  width: 65%;
+  height: 65%;
   transform: scale(0.8, 0.8);
   -ms-transform: scale(0.8, 0.8);
   -webkit-transform: scale(0.8, 0.8);
+}
+
+.img--banner{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about--container{
+  font-size: large;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 20%;
+ 
 }
 .main--container{
   width: 100%;
