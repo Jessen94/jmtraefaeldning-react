@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import img from "../img/Figma_banner.jpg";
+import React from 'react'
+import img from "../img/Figma_banner.jpg"
 
-export default class carousel extends Component {
-    render() {
-        return (
+function Banner() {
+    return (
         <div className="main-banner">
-            <img className="img--banner" src={img} alt="Jens posere med motorsav, og nedlagt træ"/>
+            <img className="img--banner" src={img} alt="Jens posere med motorsav, og nedlagt træ" />
         </div>
-        )
-    }
+    )
 }
+
+export default Banner

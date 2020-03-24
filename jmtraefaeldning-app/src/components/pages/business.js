@@ -2,7 +2,7 @@ import React from 'react'
 import img from '../img/Figma_erhverv.jpg'
 
 
-function business() {
+function Business() {
     return (
         <div>
             <div className="intro--container">
@@ -31,4 +31,4 @@ function business() {
     )
 }
 
-export default business;
+export default Business

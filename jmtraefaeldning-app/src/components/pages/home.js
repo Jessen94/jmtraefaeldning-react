@@ -1,8 +1,8 @@
-import React from 'react';
-import img from "../img/Figma_hej.jpg";
+import React from 'react'
+import img from "../img/Figma_hej.jpg"
 
 
-function home() {
+function Home() {
     return (
         <div>
             <div className="intro--container">
@@ -26,4 +26,4 @@ function home() {
             )
         }
         
-export default home;
+export default Home

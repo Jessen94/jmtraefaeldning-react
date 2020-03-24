@@ -30,4 +30,4 @@ function Private() {
     )
 }
 
-export default Private;
+export default Private
