@@ -11,18 +11,18 @@ function Business() {
                 </div>
                 <div className="intro">
                     <div className="intro--text">
-                    <div className="intro-text-headline">
-                        <h1>Professionelt og effektivt</h1>
-                    </div>
+                        <div className="intro-text-headline">
+                            <h1>Professionelt og effektivt</h1>
+                        </div>
                         <p>
-                        Udover træfældning og -beskæring til private så tilbyder jeg også skovpleje til virksomheder. Dette inkludere:<br/><br/>
-                        <ol>
-                            <li>Fældning af træer i alle størrelser</li>
-                            <li>Udtyndning</li>
-                            <li>Udrensning</li>
-                            <li>Pakning af juletræer inkl. kørsel</li>
-                        </ol>
-                        <br/>
+                            Udover træfældning og -beskæring til private så tilbyder jeg også skovpleje til virksomheder. Dette inkludere:<br /><br />
+                            <ol>
+                                <li>Fældning af træer i alle størrelser</li>
+                                <li>Udtyndning</li>
+                                <li>Udrensning</li>
+                                <li>Pakning af juletræer inkl. kørsel</li>
+                            </ol>
+                            <br />
                         Ring for at få et tilbud
                         </p>
                     </div>

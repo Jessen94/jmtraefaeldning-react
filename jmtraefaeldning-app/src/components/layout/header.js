@@ -18,8 +18,6 @@ function Header() {
     )
 }
 
-
-
 const linkstyle = {
     textDecoration: 'none',
     color: '#000000'
