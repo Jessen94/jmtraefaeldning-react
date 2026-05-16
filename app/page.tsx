@@ -71,7 +71,7 @@ export default function HomePage() {
               src={IMAGES.logo}
               alt={SITE.name}
               width={1024}
-              height={1024}
+              height={319}
               priority
               className="h-auto w-full max-w-[280px] object-contain md:max-w-[340px]"
               sizes="(max-width: 768px) 280px, 340px"

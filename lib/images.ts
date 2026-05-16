@@ -1,6 +1,6 @@
 /**
  * Public image paths (`public/images/`).
- * Logo: `public/images/logo.png`. After replacing it, run `npm run favicons`.
+ * Logo: `public/images/logo.png` (PNG with transparency). After replacing it, run `npm run favicons`.
  */
 export const IMAGES = {
   logo: "/images/logo.png",

@@ -48,7 +48,7 @@ export function SiteHeader() {
             src={IMAGES.logo}
             alt={SITE.name}
             width={1024}
-            height={1024}
+            height={319}
             className="h-[50px] w-auto object-contain object-left md:h-[50px]"
             priority
        

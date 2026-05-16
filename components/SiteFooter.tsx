@@ -18,7 +18,7 @@ export function SiteFooter() {
               src={IMAGES.logo}
               alt={SITE.name}
               width={1024}
-              height={1024}
+              height={319}
               className="h-auto w-full max-w-[200px] object-contain object-left"
             />
           </Link>
