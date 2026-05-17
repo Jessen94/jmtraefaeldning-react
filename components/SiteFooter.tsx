@@ -23,29 +23,64 @@ export function SiteFooter() {
             />
           </Link>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-on-inverse-surface/85">{SITE.tagline}</p>
+          <a
+            href={SITE.social.facebook}
+            target="_blank"
+            rel="noopener"
+            aria-label={`${SITE.name} på Facebook`}
+            className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-on-inverse-surface/40 text-on-inverse-surface/85 transition hover:border-accent-cta hover:text-accent-cta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta"
+          >
+            <FacebookIcon />
+          </a>
           <p className="mt-6 text-sm text-on-inverse-surface/70">
-            © {YEAR} {SITE.name}.
+            © {YEAR} {SITE.name} · CVR {SITE.cvr}
           </p>
         </div>
 
-        <div className="md:col-span-4 lg:col-span-3">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-on-inverse-surface/90">
+        <div className="md:col-span-3 lg:col-span-3">
+          <p className="font-display text-sm font-semibold uppercase tracking-wider text-on-inverse-surface/90">
             Ydelser
-          </h2>
-          <p className="mt-5 text-[15px] text-on-inverse-surface/85">
-            <Link
-              href="/ydelser"
-              className="font-semibold underline decoration-on-inverse-surface/40 underline-offset-4 hover:decoration-on-inverse-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
-            >
-              Se alle ydelser
-            </Link>
           </p>
+          <ul className="mt-5 space-y-2 text-[15px] text-on-inverse-surface/85">
+            <li>
+              <Link
+                href="/ydelser#traeffelding-beskaering"
+                className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
+              >
+                Træfældning &amp; beskæring
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/ydelser#topkapning"
+                className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
+              >
+                Topkapning
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/ydelser#buskrydning"
+                className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
+              >
+                Buskrydning &amp; hæk
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/ydelser#maskinkoersel"
+                className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
+              >
+                Maskinkørsel
+              </Link>
+            </li>
+          </ul>
         </div>
 
-        <div className="md:col-span-3 lg:col-span-5">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-on-inverse-surface/90">
+        <address className="not-italic md:col-span-4 lg:col-span-5">
+          <p className="font-display text-sm font-semibold uppercase tracking-wider text-on-inverse-surface/90">
             Kontakt
-          </h2>
+          </p>
           <ul className="mt-5 space-y-4 text-[15px]">
             <li className="flex items-start gap-3">
               <span className="mt-0.5 shrink-0 text-on-inverse-surface/70" aria-hidden>
@@ -69,8 +104,26 @@ export function SiteFooter() {
                 {SITE.email}
               </a>
             </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-0.5 shrink-0 text-on-inverse-surface/70" aria-hidden>
+                <PinIcon />
+              </span>
+              <span className="text-on-inverse-surface/85">
+                C/O {SITE.address.co}
+                <br />
+                {SITE.address.street}
+                <br />
+                {SITE.address.postalCode} {SITE.address.city}
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-0.5 shrink-0 text-on-inverse-surface/70" aria-hidden>
+                <ClockIcon />
+              </span>
+              <span className="text-on-inverse-surface/85">{SITE.openingHours.label}</span>
+            </li>
           </ul>
-        </div>
+        </address>
       </div>
     </footer>
   );
@@ -98,6 +151,37 @@ function MailIcon() {
         strokeWidth={1.75}
         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
       />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.75}
+        d="M12 21s-7-7.07-7-12a7 7 0 1114 0c0 4.93-7 12-7 12z"
+      />
+      <circle cx="12" cy="9" r="2.5" strokeWidth={1.75} />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+      <circle cx="12" cy="12" r="9" strokeWidth={1.75} />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 7v5l3 2" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+      <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.6c0-.9.3-1.5 1.5-1.5H16.6V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.2v3h2.5V21h2.8z" />
     </svg>
   );
 }

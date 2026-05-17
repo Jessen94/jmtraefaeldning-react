@@ -6,8 +6,22 @@ import { SERVICES_HOME } from "@/lib/services";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Forside",
-  description: SITE.tagline,
+  title: {
+    absolute: `${SITE.name} – Professionel træfældning & træpleje i hele Danmark`,
+  },
+  description: SITE.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: `${SITE.url}/`,
+    title: `${SITE.name} – Professionel træfældning & træpleje i hele Danmark`,
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} – Professionel træfældning & træpleje i hele Danmark`,
+    description: SITE.description,
+  },
 };
 
 function ServiceIcon({ name }: { name: (typeof SERVICES_HOME)[number]["icon"] }) {
@@ -59,6 +73,7 @@ export default function HomePage() {
         <Image
           src={IMAGES.heroForest}
           alt=""
+          role="presentation"
           fill
           priority
           sizes="100vw"
@@ -78,11 +93,11 @@ export default function HomePage() {
             />
           </div>
           <h1 className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-on-surface md:mt-8 md:text-5xl md:leading-[1.1]">
-            Professionel træpleje — præcist, sikkert og ansvarligt
+            Træfældning &amp; træpleje i hele Danmark — sikkert og professionelt
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-on-surface-variant">
-            Vi leverer kvalitetsarbejde til private og erhverv med fokus på sikkerhed, miljø og et resultat, du kan stole
-            på i mange år.
+            JM Træfældning leverer kvalitetsarbejde til private og erhverv med fokus på sikkerhed, miljø og et resultat,
+            du kan stole på i mange år. Vi kører i hele landet — ring eller skriv for et uforpligtende tilbud.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <Link
@@ -106,7 +121,7 @@ export default function HomePage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-[0_12px_40px_var(--color-card-shadow)]">
             <Image
               src={IMAGES.erhverv}
-              alt="Jens i sikkerhedsudstyr ved træfældning"
+              alt={`${SITE.founder} fra ${SITE.name} i sikkerhedsudstyr under en træfældning`}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-[center_28%]"
@@ -115,14 +130,18 @@ export default function HomePage() {
           <div>
             <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Hej, jeg er Jens.</h2>
             <p className="mt-6 text-on-surface-variant">
-              Med års erfaring i træpleje og fældning hjælper jeg dig fra den første vurdering til området er ryddet og
-              klar. Jeg arbejder kontrolleret, forklarer tydeligt og respekterer både din ejendom og naturen omkring os.
+              Jeg er uddannet skov- og naturtekniker og har siden 2019 arbejdet professionelt med fældning, beskæring
+              og skovpleje rundt omkring i Danmark. Jeg holder til i Midtjylland og kører gerne ud i hele landet.
+            </p>
+            <p className="mt-5 text-on-surface-variant">
+              Du møder den samme fagmand fra første vurdering, til området er ryddet og klar — sikkert, effektivt og
+              tilpasset dine behov.
             </p>
             <Link
               href="/om-os"
               className="mt-8 inline-flex min-h-[44px] items-center gap-2 font-display text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary rounded-sm"
             >
-              Jens Moesgaard
+              Mød {SITE.founder}
               <span aria-hidden>→</span>
             </Link>
           </div>
@@ -131,9 +150,10 @@ export default function HomePage() {
 
       <section className="border-t border-card-border bg-background py-16 md:py-[7.5rem]">
         <div className="mx-auto max-w-[var(--container-max-width)] px-[24px]">
-          <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Kerneydelser</h2>
+          <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Vores ydelser</h2>
           <p className="mt-4 max-w-2xl text-on-surface-variant">
-            Fra enkelttræ til større oprydningsprojekter — vi har grejet og kompetencerne til opgaven.
+            Fra enkelttræ til større oprydningsprojekter — træfældning, beskæring, topkapning og maskinkørsel. Vi har
+            grejet og kompetencerne, uanset om opgaven er på en tæt bygrund eller på et stort åbent areal.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-8">
             {SERVICES_HOME.map((s) => (

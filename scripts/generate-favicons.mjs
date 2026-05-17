@@ -1,6 +1,7 @@
 /**
- * Build app/icon.png, app/apple-icon.png, and app/favicon.ico from public/images/logo.png.
- * Also rewrites logo.png as a true PNG with transparency (removes black JPEG matte).
+ * Build app/icon.png, app/apple-icon.png, and app/favicon.ico from
+ * public/images/logo_2.png (the favicon source — separate from the display
+ * logo at public/images/logo_1.png).
  * Run: node scripts/generate-favicons.mjs
  */
 import fs from "node:fs/promises";
@@ -9,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const input = path.join(root, "public", "images", "logo.png");
+const input = path.join(root, "public", "images", "logo_2.png");
 const appDir = path.join(root, "app");
 const transparent = { r: 0, g: 0, b: 0, alpha: 0 };
 
@@ -50,7 +51,6 @@ function pngToIco(pngBuffer, size) {
 }
 
 const logo = await logoWithTransparency();
-const logoPng = await logo.png().toBuffer();
 
 async function square(size) {
   return logo
@@ -60,18 +60,9 @@ async function square(size) {
     .toBuffer();
 }
 
-const png32 = await square(32);
-await fs.writeFile(path.join(appDir, "icon.png"), png32);
-await fs.writeFile(path.join(appDir, "apple-icon.png"), await square(180));
-await fs.writeFile(path.join(appDir, "favicon.ico"), pngToIco(png32, 32));
+const png64 = await square(64);
+await fs.writeFile(path.join(appDir, "icon.png"), png64);
+await fs.writeFile(path.join(appDir, "apple-icon.png"), await square(360));
+await fs.writeFile(path.join(appDir, "favicon.ico"), pngToIco(png64, 64));
 
-const logoOut = path.join(path.dirname(input), "logo.transparent.png");
-await fs.writeFile(logoOut, logoPng);
-try {
-  await fs.rename(logoOut, input);
-} catch {
-  await fs.writeFile(input, logoPng);
-  await fs.unlink(logoOut).catch(() => {});
-}
-
-console.log("Wrote public/images/logo.png, app/icon.png, app/apple-icon.png, app/favicon.ico");
+console.log("Wrote app/icon.png (64), app/apple-icon.png (360), app/favicon.ico (64) from public/images/logo_2.png");

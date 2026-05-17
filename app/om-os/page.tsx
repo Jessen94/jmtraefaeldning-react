@@ -5,8 +5,20 @@ import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Om os",
-  description: `Lær ${SITE.name} bedre at kende — erfaren træpleje med fokus på sikkerhed og kundetæt samarbejde.`,
+  title: "Om os – Jens Mosegaard, skov- og naturtekniker",
+  description: `Mød Jens Mosegaard, indehaver af ${SITE.name}. Uddannet skov- og naturtekniker med speciale i skov- og naturpleje. Base i Midtjylland — kører i hele Danmark.`,
+  alternates: { canonical: "/om-os" },
+  openGraph: {
+    type: "profile",
+    url: `${SITE.url}/om-os/`,
+    title: `Om os – Jens Mosegaard og ${SITE.name}`,
+    description: `Jens Mosegaard er uddannet skov- og naturtekniker og har arbejdet professionelt med fældning, beskæring og skovpleje siden 2019. Base i Midtjylland, kører i hele Danmark.`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Om os – Jens Mosegaard og ${SITE.name}`,
+    description: `Jens Mosegaard – uddannet skov- og naturtekniker. Professionelt arbejde med fældning, beskæring og skovpleje siden 2019.`,
+  },
 };
 
 export default function OmOsPage() {
@@ -23,8 +35,8 @@ export default function OmOsPage() {
       <section className="mx-auto grid max-w-[var(--container-max-width)] items-start gap-12 px-[24px] pt-16 md:grid-cols-2 md:gap-16 lg:items-center lg:pt-20">
         <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-card-border shadow-[0_12px_40px_rgba(21,66,18,0.09)] lg:sticky lg:top-32">
           <Image
-            src={IMAGES.erhverv}
-            alt="Portræt af Jens Moesgaard i fuld friluftsudrustning ved træfældning"
+            src={IMAGES.jensCutting}
+            alt={`${SITE.founder} fra ${SITE.name} i gang med professionel træfældning`}
             fill
             className="object-cover"
             sizes="(min-width: 768px) 45vw, 100vw"
@@ -33,22 +45,52 @@ export default function OmOsPage() {
         </div>
         <div>
           <h2 className="font-display text-3xl font-bold text-primary md:text-[2rem] md:leading-10">
-            Erfaring, ro og ordentlig kommunikation
+            Fagmand med respekt for sikkerhed, kvalitet og natur
           </h2>
           <p className="mt-6 text-on-surface-variant">
-            Hos {SITE.name} er træerne ikke blot &quot;rå materiale&quot;. Hvert projekt kræver forberedelse, respekt for
-            omgivelser og en klar aftale om, hvordan vi arbejder sikkert sammen på grunden.
+            Mit navn er {SITE.founder}, og jeg er indehaver af {SITE.name}. Hos os får du en fagmand med hænderne
+            skruet rigtigt på — med stor respekt for både sikkerhed, kvalitet og naturen.
           </p>
           <p className="mt-5 text-on-surface-variant">
-            Jeg hedder Jens Moesgaard og driver virksomheden med ambitionen om at kombinere faglig stolthed og
-            jordnær kontakt til kunder og naboer. Du møder den samme person fra rådgivning til nedtag og oprydning.
+            Jeg er uddannet <strong className="font-semibold text-on-surface">skov- og naturtekniker</strong> med
+            speciale i skov- og naturpleje, og har siden 2019 arbejdet professionelt med fældning, beskæring og
+            skovpleje rundt omkring i Danmark.
           </p>
           <p className="mt-5 text-on-surface-variant">
-            Sikkerhed, miljøhensyn og dokumentation rundt om opgaven er en naturlig del af måden vi arbejder på —
-            ikke noget du skal spørge særskilt efter.
+            Jeg går op i at levere et ordentligt stykke arbejde — uanset om det er en enkelt haveopgave eller en større
+            fældningsopgave. Du kan derfor forvente en løsning, der er både sikker, effektiv og tilpasset dine behov.
+          </p>
+          <p className="mt-5 text-on-surface-variant">
+            Jeg holder til i <strong className="font-semibold text-on-surface">Midtjylland</strong> — og jeg kører
+            gerne ud i hele landet. Har du et træ, der skal fældes eller beskæres? Så er du altid velkommen til at tage
+            fat i mig for en uforpligtende snak.
           </p>
 
-          <div className="mt-12 flex flex-wrap gap-4 rounded-lg border border-card-border bg-surface-container-lowest p-6">
+          <div className="mt-12 grid gap-4 rounded-lg border border-card-border bg-surface-container-lowest p-6 sm:grid-cols-2">
+            <div>
+              <p className="font-display text-[0.6875rem] font-semibold uppercase tracking-wider text-on-surface-variant">
+                Uddannelse
+              </p>
+              <p className="mt-2 text-sm text-on-surface-variant">
+                Skov- og naturtekniker · speciale i skov- og naturpleje
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-[0.6875rem] font-semibold uppercase tracking-wider text-on-surface-variant">
+                Erfaring
+              </p>
+              <p className="mt-2 text-sm text-on-surface-variant">
+                Professionelt arbejde med træ siden {SITE.foundingYear}
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-[0.6875rem] font-semibold uppercase tracking-wider text-on-surface-variant">
+                Område
+              </p>
+              <p className="mt-2 text-sm text-on-surface-variant">
+                Base i Midtjylland · kører i hele Danmark
+              </p>
+            </div>
             <div>
               <p className="font-display text-[0.6875rem] font-semibold uppercase tracking-wider text-on-surface-variant">
                 Arbejdsgange

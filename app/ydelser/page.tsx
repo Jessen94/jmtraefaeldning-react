@@ -5,8 +5,23 @@ import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Ydelser",
-  description: "Træfældning, beskæring, topkapning, buskrydning og maskinkørsel med fokus på sikkerhed og kvalitet.",
+  title: "Ydelser – Træfældning, beskæring & topkapning",
+  description:
+    "Vi tilbyder professionel træfældning, beskæring, topkapning, buskrydning, hækklipning og maskinkørsel i hele Danmark. Sikker udførelse og uforpligtende tilbud.",
+  alternates: { canonical: "/ydelser" },
+  openGraph: {
+    type: "website",
+    url: `${SITE.url}/ydelser/`,
+    title: `Ydelser – Træfældning, beskæring & topkapning · ${SITE.name}`,
+    description:
+      "Træfældning, beskæring, topkapning, buskrydning og maskinkørsel — udført sikkert og professionelt i hele Danmark.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Ydelser – Træfældning, beskæring & topkapning · ${SITE.name}`,
+    description:
+      "Træfældning, beskæring, topkapning, buskrydning og maskinkørsel — udført sikkert og professionelt i hele Danmark.",
+  },
 };
 
 function TreeIcon() {
@@ -58,10 +73,13 @@ export default function YdelserPage() {
     <>
       <section className="border-b border-card-border bg-surface-container-lowest py-16 md:py-20">
         <div className="mx-auto max-w-[56rem] px-[24px] text-center">
-          <h1 className="font-display text-4xl font-bold text-primary md:text-5xl">Vores professionelle ydelser</h1>
+          <h1 className="font-display text-4xl font-bold text-primary md:text-5xl">
+            Træfældning, beskæring og træpleje — vores ydelser
+          </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-on-surface-variant">
-            Vi kombinerer specialudstyr, erfaring og planlægning, så træerne fjernes eller plejes sikkert — uanset om
-            det er på smalle bygrunde, ved bebyggelse eller på større arealer.
+            JM Træfældning kombinerer specialudstyr, erfaring og planlægning, så træerne fjernes eller plejes sikkert —
+            uanset om opgaven er på en smal bygrund, ved bebyggelse eller på et større areal. Vi løser opgaver i hele
+            Danmark for både private og erhverv.
           </p>
         </div>
       </section>
@@ -75,7 +93,7 @@ export default function YdelserPage() {
             <div className="relative aspect-[16/14] lg:col-span-5 lg:aspect-auto lg:min-h-[26rem]">
               <Image
                 src={IMAGES.erhverv}
-                alt="Professionel træfældning med motorsav"
+                alt="Professionel træfældning med motorsav udført af JM Træfældning"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 41vw, 100vw"
