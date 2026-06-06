@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SITE } from "@/lib/site";
 import { jsonLdScript, localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -103,6 +104,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
