@@ -10,6 +10,7 @@ import { SITE } from "@/lib/site";
 const NAV = [
   { href: "/", label: "Forside" },
   { href: "/ydelser", label: "Ydelser" },
+  { href: "/priser", label: "Priser" },
   { href: "/om-os", label: "Om os" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;

@@ -74,6 +74,14 @@ export function SiteFooter() {
                 Maskinkørsel
               </Link>
             </li>
+            <li>
+              <Link
+                href="/priser"
+                className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-cta rounded-sm"
+              >
+                Priser
+              </Link>
+            </li>
           </ul>
         </div>
 

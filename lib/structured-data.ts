@@ -1,3 +1,4 @@
+import { ACCESS_LEVELS, FELLING_TIERS, PRICE_CURRENCY, priceBounds } from "@/lib/pricing";
 import { SITE } from "@/lib/site";
 
 const DAY_TO_SCHEMA: Record<string, string> = {
@@ -10,16 +11,39 @@ const DAY_TO_SCHEMA: Record<string, string> = {
   Sunday: "https://schema.org/Sunday",
 };
 
-const SERVICES = [
-  "Træfældning",
-  "Beskæring",
-  "Topkapning",
-  "Buskrydning",
-  "Hækklipning",
-  "Stubfræsning",
-  "Flishugning",
-  "Maskinkørsel",
-] as const;
+type ServiceEntry = {
+  name: string;
+  /** Felling-tier services share the matrix price range; other services omit price hints. */
+  pricedByMatrix?: boolean;
+};
+
+const SERVICES: readonly ServiceEntry[] = [
+  { name: "Træfældning", pricedByMatrix: true },
+  { name: "Beskæring" },
+  { name: "Topkapning", pricedByMatrix: true },
+  { name: "Buskrydning" },
+  { name: "Hækklipning" },
+  { name: "Stubfræsning" },
+  { name: "Flishugning" },
+  { name: "Maskinkørsel" },
+];
+
+function priceRangeString() {
+  const { min, max } = priceBounds();
+  return `${min}-${max} ${PRICE_CURRENCY}`;
+}
+
+function aggregateOfferForMatrix() {
+  const { min, max } = priceBounds();
+  return {
+    "@type": "AggregateOffer",
+    priceCurrency: PRICE_CURRENCY,
+    lowPrice: min,
+    highPrice: max,
+    availability: "https://schema.org/InStock",
+    areaServed: { "@type": "Country", name: "Denmark" },
+  } as const;
+}
 
 export function localBusinessJsonLd() {
   return {
@@ -42,8 +66,8 @@ export function localBusinessJsonLd() {
       jobTitle: SITE.founderTitle,
     },
     foundingDate: `${SITE.foundingYear}`,
-    priceRange: "$$",
-    currenciesAccepted: "DKK",
+    priceRange: priceRangeString(),
+    currenciesAccepted: PRICE_CURRENCY,
     paymentAccepted: "Bankoverførsel, MobilePay",
     address: {
       "@type": "PostalAddress",
@@ -66,18 +90,31 @@ export function localBusinessJsonLd() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Træplejeydelser",
-      itemListElement: SERVICES.map((service, index) => ({
-        "@type": "Offer",
-        position: index + 1,
-        itemOffered: {
-          "@type": "Service",
-          name: service,
-          areaServed: { "@type": "Country", name: "Denmark" },
-          provider: { "@id": `${SITE.url}/#business` },
-        },
-      })),
+      itemListElement: SERVICES.map((service, index) => {
+        const offer: Record<string, unknown> = {
+          "@type": "Offer",
+          position: index + 1,
+          itemOffered: {
+            "@type": "Service",
+            name: service.name,
+            areaServed: { "@type": "Country", name: "Denmark" },
+            provider: { "@id": `${SITE.url}/#business` },
+          },
+        };
+        if (service.pricedByMatrix) {
+          offer.priceSpecification = {
+            "@type": "PriceSpecification",
+            minPrice: priceBounds().min,
+            maxPrice: priceBounds().max,
+            priceCurrency: PRICE_CURRENCY,
+            valueAddedTaxIncluded: true,
+          };
+          offer.priceCurrency = PRICE_CURRENCY;
+        }
+        return offer;
+      }),
     },
-  } as const;
+  };
 }
 
 export function websiteJsonLd() {
@@ -121,6 +158,51 @@ export function breadcrumbJsonLd(items: Array<{ name: string; url: string }>) {
   } as const;
 }
 
+/**
+ * Service + AggregateOffer schema for the /priser page.
+ * Emits one Offer per (height tier × access level) combination with a concrete price.
+ */
+export function priserServiceJsonLd() {
+  const offers = FELLING_TIERS.flatMap((tier) =>
+    ACCESS_LEVELS.map((level) => {
+      const price = tier.prices[level.id];
+      if (price === null) return null;
+      return {
+        "@type": "Offer",
+        name: `Træfældning ${tier.heightLabel} — ${level.label}`,
+        price,
+        priceCurrency: PRICE_CURRENCY,
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price,
+          priceCurrency: PRICE_CURRENCY,
+          valueAddedTaxIncluded: true,
+        },
+        areaServed: { "@type": "Country", name: "Denmark" },
+      };
+    }),
+  ).filter((o): o is NonNullable<typeof o> => o !== null);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE.url}/priser/#service`,
+    name: "Træfældning — vejledende priser",
+    serviceType: "Træfældning",
+    description:
+      "Vejledende priser på træfældning efter træets højde og adgangsforhold. Inkluderer fældning, opskæring og oprydning på stedet. Alle priser er inkl. moms.",
+    provider: { "@id": `${SITE.url}/#business` },
+    areaServed: { "@type": "Country", name: "Denmark" },
+    url: `${SITE.url}/priser/`,
+    offers: {
+      ...aggregateOfferForMatrix(),
+      offerCount: offers.length,
+      offers,
+    },
+  };
+}
+
 type JsonLdValue =
   | string
   | number
@@ -129,7 +211,7 @@ type JsonLdValue =
   | readonly JsonLdValue[]
   | { readonly [key: string]: JsonLdValue };
 
-export function jsonLdScript(data: JsonLdValue) {
+export function jsonLdScript(data: JsonLdValue | object) {
   return {
     __html: JSON.stringify(data).replace(/</g, "\\u003c"),
   };
