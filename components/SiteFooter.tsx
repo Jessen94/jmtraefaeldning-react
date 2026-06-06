@@ -19,7 +19,7 @@ export function SiteFooter() {
               alt={SITE.name}
               width={1024}
               height={319}
-              className="h-auto w-full max-w-[200px] object-contain object-left"
+              className="h-auto w-full max-w-[200px] object-contain object-left [filter:brightness(0)_invert(1)]"
             />
           </Link>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-on-inverse-surface/85">{SITE.tagline}</p>
